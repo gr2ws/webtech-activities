@@ -1,11 +1,9 @@
 # Web Systems and Technologies Activities
 
-This repository contains a collection of activities for my third-year subject, **CCS7 - Web Systems and Technologies**. Only activities that use **PHP** and **MySQL** are included.
+This repository contains a collection of activities for my third-year subject, **CCS7 - Web Systems and Technologies**. Only activities that use **PHP** and **MySQL** are included. The files are meant to be used with XAMPP and its provided modules. 
 
 ## Requirements
-- [XAMPP](https://www.apachefriends.org/download.html) (or any compatible PHP and MySQL server)
-- PHP 7.4 or higher
-- MySQL 5.7 or higher
+- [XAMPP](https://www.apachefriends.org/download.html) (latest version)
 
 ## Usage Instructions
 
