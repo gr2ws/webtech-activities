@@ -1,0 +1,325 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*  Remove up and down arrow from numeric inputs (id, salary)  */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* ##### Colors ##### */
+:root {
+    --color-bg: #0d1117;
+    /* GitHub dark background */
+    --color-bg-alt: #161b22;
+    /* GitHub secondary background */
+    --color-outline: #30363d;
+    /* GitHub border color */
+    --color-text: #c9d1d9;
+    /* GitHub text color */
+    --color-err: #8b949e;
+    /* Muted text color */
+    --color-header: #161b22;
+    /* GitHub header background */
+    --color-header-border: #21262d;
+    /* GitHub header border */
+    --color-input-bg: #0d1117;
+    /* GitHub input background */
+    --color-input-border: #30363d;
+    /* GitHub input border */
+}
+
+/* ##### Typography ##### */
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    color: var(--color-text);
+}
+
+.err {
+    color: var(--color-err);
+    font-style: italic;
+}
+
+/* ##### Structure ##### */
+.header,
+.header_left,
+.header_right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.db_tb_function {
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    padding: 5px 15px;
+    background-color: var(--color-header);
+    border-bottom: 1px solid var(--color-header-border);
+}
+
+.header_left {
+    width: 30%;
+}
+
+.header_left>p {
+    display: block;
+    width: fit-content;
+    text-align: left;
+}
+
+.header_right {
+    width: 38%;
+}
+
+body {
+    background-color: var(--color-bg);
+}
+
+input,
+select {
+    background-color: var(--color-input-bg);
+    border: 1px solid var(--color-input-border);
+    color: var(--color-text);
+    padding: 5px;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-outline);
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+input[type="submit"]:disabled {
+    background-color: var(--color-bg);
+    color: var(--color-err);
+    cursor: not-allowed;
+}
+
+.search_edit_cont,
+.form_cont,
+.display_cont {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-outline);
+    border-radius: 8px;
+}
+
+.form_cont {
+    width: 40%;
+}
+
+.search_edit_cont {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.search_form,
+.edit_form {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-outline);
+    border-radius: 8px;
+}
+
+.display_cont {
+    width: 80%;
+}
+
+.search_edit_cont label,
+.form_cont label,
+.display_cont label {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.delete-btn {
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.err {
+    margin-top: 5px;
+    display: block;
+}
+
+.employee-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.employee-header,
+.employee-row {
+    display: table-row;
+}
+
+.employee-cell {
+    display: table-cell;
+    padding: 10px;
+    border: 1px solid var(--color-outline);
+    text-align: left;
+}
+
+.employee-header .employee-cell {
+    font-weight: bold;
+    background-color: var(--color-header);
+    color: var(--color-text);
+}
+
+.record-count {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form_cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-outline);
+    border-radius: 8px;
+}
+
+.form_cont>form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form_cont>form>input,
+.form_cont>form>select {
+    flex-grow: 1;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--color-input-border);
+    background-color: var(--color-input-bg);
+    color: var(--color-text);
+}
+
+.form_cont>form>input[type="submit"] {
+    align-self: flex-end;
+    padding: 10px 20px;
+    margin-top: 20px;
+    width: fit-content;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-outline);
+    cursor: pointer;
+}
+
+.search_form input[type="submit"],
+.edit_form input[type="submit"] {
+    align-self: flex-end;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-outline);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search_form form,
+.edit_form form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.search_form label,
+.edit_form label {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.search_form input,
+.edit_form input,
+.edit_form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--color-input-border);
+    background-color: var(--color-input-bg);
+    color: var(--color-text);
+}
+
+.search_form input[type="submit"],
+.edit_form input[type="submit"] {
+    align-self: flex-end;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-outline);
+    cursor: pointer;
+}
+
+.search_form h2,
+.edit_form h2 {
+    margin-bottom: 10px;
+}
+
+.search_form input[type="submit"] {
+    width: fit-content;
+    align-self: flex-end;
+    margin-top: 20px;
+}
+
+.employee-row {
+    background-color: var(--color-bg);
+}
+
+.employee-row:hover {
+    background-color: var(--color-bg-alt);
+}
+
+.edit_form input[type="submit"]:disabled {
+    background-color: var(--color-input-bg); 
+    color: var(--color-err);
+    cursor: not-allowed;
+}
+
+.edit_form input:disabled {
+    background-color: var(--color-bg-alt); 
+    color: var(--color-err);
+    cursor: not-allowed;
+}
+
+.edit_form input[type="submit"]:disabled {
+    background-color: var(--color-bg); 
+    color: var(--color-err);
+    cursor: not-allowed;
+}
